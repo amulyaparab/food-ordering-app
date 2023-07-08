@@ -13,6 +13,7 @@ export const Home = () => {
       <h3>Select Your Cuisine</h3>
       {cuisineData.map((cuisine) => (
         <button
+          key={cuisine.id}
           onClick={() => {
             setShowRestaurants(true);
             dispatch({ type: "SET_RESTAURANT", payload: cuisine });
@@ -32,7 +33,7 @@ export const Home = () => {
           <div className="restaurantList">
             {state?.currentRestaurant?.menu?.map(
               ({ name, imgSrc, price, qty }) => (
-                <div>
+                <div key={name}>
                   <img src={imgSrc} alt={name} />
                   <h3>{name}</h3>
                   <p>

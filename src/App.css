@@ -117,13 +117,39 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 3rem;
+  padding: 2rem 2rem 2rem 3rem;
   color: #ffffff;
+  position: relative;
+  margin-top: 5rem;
+  align-items: flex-start;
 }
+
 .pop-up button {
   background-color: #ffffff;
   color: #e7625f;
   cursor: pointer;
+  font-weight: bolder;
+  margin: 0 auto;
+}
+.pop-up i {
+  position: absolute;
+  font-size: 25px;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+}
+
+.pop-up input,
+select {
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  width: 150px;
+}
+.pop-up select {
+  margin-left: 2.5rem;
+  width: 165px;
 }
 .entire-restaurant {
   cursor: pointer;

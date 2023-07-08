@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 import { restaurantsData } from "../Database/cuisineData";
 
 const DataContext = createContext();
@@ -39,6 +39,20 @@ export const DataProvider = ({ children }) => {
                 }
               : restaurant
           ),
+          review: {
+            revName: "Guest",
+            rating: "",
+            comment: "",
+          },
+        };
+      case "CLEAR_REVIEW":
+        return {
+          ...state,
+          review: {
+            revName: "Guest",
+            rating: "",
+            comment: "",
+          },
         };
       default:
         return state;
@@ -55,9 +69,12 @@ export const DataProvider = ({ children }) => {
     },
   };
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  const [showReviewForm, setShowReviewForm] = useState(false);
+  console.log(state, "state");
   return (
-    <DataContext.Provider value={{ state, dispatch }}>
+    <DataContext.Provider
+      value={{ state, dispatch, showReviewForm, setShowReviewForm }}
+    >
       {children}
     </DataContext.Provider>
   );
