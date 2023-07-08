@@ -1,0 +1,52 @@
+.reviews {
+  width: 60%;
+  margin: auto;
+}
+.reviews img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.review-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.review-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.reviews p {
+  text-align: left;
+}
+.reviews-heading {
+  width: 60%;
+  margin: auto;
+  text-align: left;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.rating {
+  padding: 0.5rem 1rem;
+  background-color: green;
+  color: white;
+  font-size: small;
+  border-radius: 5px;
+}
+
+.guest {
+  font-size: 40px;
+}
+.small {
+  color: yellow;
+  font-size: smaller;
+  margin-left: 0.5rem;
+}
+.back {
+  position: absolute;
+  font-size: 40px;
+  top: 1.5rem;
+  left: 2rem;
+  cursor: pointer;
+}

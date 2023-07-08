@@ -1,14 +1,15 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useData } from "../Contexts/DataProvider";
-import { ReviewForm } from "../Components/ReviewForm";
+import { ReviewForm } from "../Components/ReviewForm/ReviewForm";
+import { Reviews } from "../Components/Reviews/Reviews";
 
 export const SingleRestaurant = () => {
   const { restaurantId } = useParams();
   const { state, showReviewForm, setShowReviewForm } = useData();
+  const navigate = useNavigate();
   const findRestaurant = state.restaurants.find(
     ({ id }) => id === Number(restaurantId)
   );
-  const navigate = useNavigate();
 
   return (
     <>
@@ -30,29 +31,7 @@ export const SingleRestaurant = () => {
         </button>
       </div>
       <hr />
-      <div>
-        <h1>Reviews</h1>
-        {findRestaurant?.ratings?.map(({ rating, comment, revName, pp }) => (
-          <div key={revName} className="reviews">
-            <div className="review-details">
-              <div className="review-profile">
-                {pp ? (
-                  <img src={pp} alt={revName} />
-                ) : (
-                  <i class="fa-solid fa-circle-user guest"></i>
-                )}
-                <h4>{revName}</h4>
-              </div>
-              <div className="rating">
-                {rating}
-                <i class="fa-solid fa-star small "></i>
-              </div>
-            </div>
-            <p>{comment}</p>
-            <hr />
-          </div>
-        ))}
-      </div>
+      <Reviews findRestaurant={findRestaurant} />
       {showReviewForm && <ReviewForm restaurantId={restaurantId} />}
     </>
   );

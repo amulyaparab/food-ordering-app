@@ -29,7 +29,9 @@ export const Home = () => {
             navigate(`/restaurants/${state?.currentRestaurant?.id}`)
           }
         >
-          <h1>Dishes By {state?.currentRestaurant?.name}</h1>
+          <h1 className="restaurant-heading">
+            Dishes By {state?.currentRestaurant?.name}
+          </h1>
           <div className="restaurantList">
             {state?.currentRestaurant?.menu?.map(
               ({ name, imgSrc, price, qty }) => (

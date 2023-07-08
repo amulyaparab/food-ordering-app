@@ -1,0 +1,62 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pop-up {
+  width: 300px;
+  background-color: #e7625f;
+  height: 300px;
+  margin: auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 2rem 2rem 2rem 3rem;
+  color: #ffffff;
+  position: relative;
+  margin-top: 5rem;
+  align-items: flex-start;
+}
+
+.pop-up button {
+  background-color: #ffffff;
+  color: #282c34;
+  cursor: pointer;
+  font-weight: bolder;
+  padding: 0.5rem 2rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+.pop-up i {
+  position: absolute;
+  font-size: 25px;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+}
+.pop-up h1 {
+  border-bottom: 2px solid #ffb8b7;
+  padding: 0.5rem;
+}
+.pop-up label {
+  font-size: large;
+  font-weight: bold;
+}
+.pop-up input,
+select {
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  width: 150px;
+  font-size: medium;
+}
+.pop-up select {
+  margin-left: 2.7rem;
+  width: 165px;
+}
