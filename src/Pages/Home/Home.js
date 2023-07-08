@@ -26,7 +26,10 @@ export const Home = () => {
       {showRestaurants && (
         <div className="entire-restaurant">
           {state?.currentRestaurants?.map((restaurant) => (
-            <div onClick={() => navigate(`/restaurants/${restaurant?.id}`)}>
+            <div
+              key={restaurant.id}
+              onClick={() => navigate(`/restaurants/${restaurant?.id}`)}
+            >
               <h1 className="restaurant-heading">
                 Dishes By {restaurant?.name}
               </h1>

@@ -8,7 +8,7 @@ export const ReviewForm = ({ restaurantId }) => {
       <div className="overlay">
         <div className="pop-up">
           <i
-            class="fa-solid fa-circle-xmark"
+            className="fa-solid fa-circle-xmark"
             onClick={() => {
               setShowReviewForm(false);
               dispatch({ type: "CLEAR_REVIEW" });

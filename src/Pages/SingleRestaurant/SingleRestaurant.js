@@ -14,7 +14,10 @@ export const SingleRestaurant = () => {
 
   return (
     <>
-      <i class="fa-solid fa-arrow-left back" onClick={() => navigate("/")}></i>
+      <i
+        className="fa-solid fa-arrow-left back"
+        onClick={() => navigate("/")}
+      ></i>
       <div className="restaurant-deets">
         <h1>{findRestaurant?.name}</h1>
         <p>
@@ -29,11 +32,13 @@ export const SingleRestaurant = () => {
         <p>{findRestaurant?.address}</p>
         <p>
           Average Rating:{" "}
-          {findRestaurant?.ratings?.reduce(
-            (acc, curr) =>
-              (acc += curr.rating / findRestaurant?.ratings?.length),
-            0
-          )}
+          {findRestaurant?.ratings
+            ?.reduce(
+              (acc, curr) =>
+                (acc += curr.rating / findRestaurant?.ratings?.length),
+              0
+            )
+            ?.toFixed(1)}
         </p>
         <button
           className="restaurant-btn"
