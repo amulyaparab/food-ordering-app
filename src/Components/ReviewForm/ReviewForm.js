@@ -1,7 +1,7 @@
 import { useData } from "../../Contexts/DataProvider";
 import "./reviewForm.css";
 export const ReviewForm = ({ restaurantId }) => {
-  const { setShowReviewForm, dispatch } = useData();
+  const { setShowReviewForm, dispatch, state } = useData();
 
   return (
     <>
@@ -32,12 +32,16 @@ export const ReviewForm = ({ restaurantId }) => {
             {" "}
             Comment:
             <input
+              placeholder="Comment required"
               onChange={(event) =>
                 dispatch({ type: "SET_COMMENT", payload: event.target.value })
               }
             />
           </label>
           <button
+            disabled={
+              !state?.review?.rating?.length || !state?.review?.comment?.length
+            }
             onClick={() => {
               dispatch({
                 type: "SUBMIT_REVIEW",
