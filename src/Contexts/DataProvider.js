@@ -6,7 +6,7 @@ const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const initialState = {
     restaurants: restaurantsData,
-    currentRestaurant: {},
+    currentRestaurants: [],
     review: {
       revName: "Guest",
       rating: "",

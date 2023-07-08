@@ -7,6 +7,7 @@ export const Home = () => {
   const [showRestaurants, setShowRestaurants] = useState(false);
   const { state, dispatch } = useData();
   const navigate = useNavigate();
+  console.log(state);
   return (
     <>
       <h1>Food Ordering App</h1>
@@ -23,29 +24,26 @@ export const Home = () => {
         </button>
       ))}
       {showRestaurants && (
-        <div
-          className="entire-restaurant"
-          onClick={() =>
-            navigate(`/restaurants/${state?.currentRestaurant?.id}`)
-          }
-        >
-          <h1 className="restaurant-heading">
-            Dishes By {state?.currentRestaurant?.name}
-          </h1>
-          <div className="restaurantList">
-            {state?.currentRestaurant?.menu?.map(
-              ({ name, imgSrc, price, qty }) => (
-                <div key={name}>
-                  <img src={imgSrc} alt={name} />
-                  <h3>{name}</h3>
-                  <p>
-                    Rs {price} for {qty}
-                  </p>
-                  <p>{state?.currentRestaurant?.name}</p>
-                </div>
-              )
-            )}
-          </div>
+        <div className="entire-restaurant">
+          {state?.currentRestaurants?.map((restaurant) => (
+            <div onClick={() => navigate(`/restaurants/${restaurant?.id}`)}>
+              <h1 className="restaurant-heading">
+                Dishes By {restaurant?.name}
+              </h1>
+              <div className="restaurantList">
+                {restaurant?.menu?.map(({ name, imgSrc, price, qty }) => (
+                  <div key={name}>
+                    <img src={imgSrc} alt={name} />
+                    <h3>{name}</h3>
+                    <p>
+                      Rs {price} for {qty}
+                    </p>
+                    <p>{restaurant?.name}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       )}
     </>

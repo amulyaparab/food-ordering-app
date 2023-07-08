@@ -5,8 +5,8 @@ export const dataReducer = (state, action) => {
     case "SET_RESTAURANT":
       return {
         ...state,
-        currentRestaurant: restaurantsData.find(
-          (restaurant) => restaurant.id === action.payload.id
+        currentRestaurants: restaurantsData.filter(
+          (restaurant) => restaurant.cuisine_id === action.payload.id
         ),
       };
     case "SET_COMMENT":

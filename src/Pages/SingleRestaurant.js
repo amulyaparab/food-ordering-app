@@ -22,7 +22,14 @@ export const SingleRestaurant = () => {
           ))}
         </p>
         <p>{findRestaurant?.address}</p>
-        <p>Average Rating: {findRestaurant?.averageRating}</p>
+        <p>
+          Average Rating:{" "}
+          {findRestaurant?.ratings?.reduce(
+            (acc, curr) =>
+              (acc += curr.rating / findRestaurant?.ratings?.length),
+            0
+          )}
+        </p>
         <button
           className="restaurant-btn"
           onClick={() => setShowReviewForm(true)}
