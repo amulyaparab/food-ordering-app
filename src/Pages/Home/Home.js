@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { cuisineData } from "../Database/cuisineData";
-import { useData } from "../Contexts/DataProvider";
+import { cuisineData } from "../../Database/cuisineData";
+import { useData } from "../../Contexts/DataProvider";
 import { useNavigate } from "react-router-dom";
+import "./home.css";
 
 export const Home = () => {
   const [showRestaurants, setShowRestaurants] = useState(false);
   const { state, dispatch } = useData();
   const navigate = useNavigate();
-  console.log(state);
   return (
     <>
       <h1>Food Ordering App</h1>

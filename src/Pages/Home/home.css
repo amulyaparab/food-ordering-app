@@ -1,0 +1,31 @@
+.entire-restaurant {
+  cursor: pointer;
+  width: 90%;
+  margin: auto;
+}
+
+.restaurantList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.restaurant-heading {
+  text-align: left;
+  margin-left: 1rem;
+  margin-top: 2rem;
+}
+.restaurantList div {
+  box-shadow: 0 0 10px 5px #ededed;
+  border-radius: 8px;
+  margin: 1rem;
+}
+.restaurantList img {
+  width: 300px;
+  height: 300px;
+  border-radius: 8px 8px 0 0;
+}
+@media screen and (max-width: 1024px) {
+  .restaurantList {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

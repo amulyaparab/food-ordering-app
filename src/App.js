@@ -1,10 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { cuisineData } from "./Database/cuisineData";
-import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./Pages/Home";
-import { SingleRestaurant } from "./Pages/SingleRestaurant";
+import { Home } from "./Pages/Home/Home";
+import { SingleRestaurant } from "./Pages/SingleRestaurant/SingleRestaurant";
 
 function App() {
   return (

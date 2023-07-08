@@ -1,7 +1,8 @@
+import "./singleRestaurant.css";
 import { useNavigate, useParams } from "react-router-dom";
-import { useData } from "../Contexts/DataProvider";
-import { ReviewForm } from "../Components/ReviewForm/ReviewForm";
-import { Reviews } from "../Components/Reviews/Reviews";
+import { useData } from "../../Contexts/DataProvider";
+import { ReviewForm } from "../../Components/ReviewForm/ReviewForm";
+import { Reviews } from "../../Components/Reviews/Reviews";
 
 export const SingleRestaurant = () => {
   const { restaurantId } = useParams();
@@ -17,9 +18,13 @@ export const SingleRestaurant = () => {
       <div className="restaurant-deets">
         <h1>{findRestaurant?.name}</h1>
         <p>
-          {findRestaurant?.menu?.map(({ name }) => (
-            <span key={name}>{`${name} , `}</span>
-          ))}
+          {findRestaurant?.menu?.map(({ name }, index) =>
+            index === findRestaurant?.menu?.length - 1 ? (
+              <span key={name}>{`${name}.`}</span>
+            ) : (
+              <span key={name}>{`${name} , `}</span>
+            )
+          )}
         </p>
         <p>{findRestaurant?.address}</p>
         <p>
